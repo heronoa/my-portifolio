@@ -25,7 +25,7 @@ const Header: React.FC = () => {
     };
 
   return (
-    <AppBar position="static" className="bg-primary dark:bg-dark">
+    <AppBar position="sticky" className="bg-primary dark:bg-dark">
       <Toolbar className="flex justify-between">
         <div className="flex items-center gap-4">
           <Image
@@ -56,6 +56,7 @@ const Header: React.FC = () => {
             <Button
               key={text}
               variant="text"
+              href={text}
               className="text-neutral-light dark:text-neutral-gray"
             >
               {text}
