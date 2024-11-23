@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary: #1F3A93;
+  --color-primary-light: #EAF2F8;
+  --color-accent-green: #27AE60;
+  --color-accent-gold: #F1C40F;
+  --color-accent-purple: #8E44AD;
+  --color-neutral-light: #efebeb;
+  --color-neutral-gray: #ECF0F1;
+  --color-dark: #121212;
+  --color-dark-light: #1C1C1C;
+  --color-dark-accent-green: #2ECC71;
+  --color-dark-accent-gold: #F39C12;
+  --color-dark-accent-purple: #9B59B6;
+  --color-dark-gray: #7F8C8D;
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-primary: #121212;
+    --color-primary-light: #1C1C1C;
+    --color-accent-green: #2ECC71;
+    --color-accent-gold: #F39C12;
+    --color-accent-purple: #9B59B6;
+    --color-neutral-light: #7F8C8D;
+    --color-neutral-gray: #ECF0F1;
+    --color-light-primary: #1F3A93;
+    --color-light-primary-light: #EAF2F8;
+    --color-light-accent-green: #27AE60;
+    --color-light-accent-gold: #F1C40F;
+    --color-light-accent-purple: #8E44AD;
+    --color-light-neutral-light: #efebeb;
+    --color-light-neutral-gray: #ECF0F1;
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
