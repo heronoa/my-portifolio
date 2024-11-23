@@ -131,6 +131,8 @@ const ThreeTechOrbit: React.FC = () => {
       if (hoveredRef.current) {
         centralCube.rotation.y += (Math.PI - centralCube.rotation.y) * 0.1; // Smoothly rotate to show the back
       } else {
+        centralCube.rotation.x = Math.PI * -0.01;
+        centralCube.rotation.z = Math.PI * -0.01;
         centralCube.rotation.y += (0 - centralCube.rotation.y) * 0.1; // Smoothly reset to show the front
       }
 

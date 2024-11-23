@@ -1,3 +1,4 @@
+import GreetingsSection from "@/components/UI/GreetingsSection";
 import ThreeTechOrbit from "@/components/UI/ThreeTechOrbit";
 import React from "react";
 
@@ -13,7 +14,7 @@ const Overview: React.FC = () => {
       />
       <div className="flex justify-center items-center gap-4 relative z-20">
         <div className="flex-1">
-          <h1 className="relative z-20 text-white text-4xl">Heron Amaral</h1>
+          <GreetingsSection />
         </div>
         <div className="flex-1">
           <ThreeTechOrbit />

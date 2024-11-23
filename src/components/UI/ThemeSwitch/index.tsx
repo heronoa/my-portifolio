@@ -6,11 +6,14 @@ export const ThemeSwitch = () => {
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme") || "light";
     document.documentElement.setAttribute("data-theme", savedTheme);
+    document.documentElement.classList.add(savedTheme);
     setTheme(savedTheme);
   }, []);
 
-  const toggleTheme = (newTheme: string) => {
-    document.documentElement.setAttribute("data-theme", newTheme);
+  const toggleTheme = () => {
+    const newTheme = theme === "light" ? "dark" : "light";
+    document.documentElement.classList.remove(theme);
+    document.documentElement.classList.add(newTheme);
     localStorage.setItem("theme", newTheme);
     setTheme(newTheme);
   };
@@ -18,7 +21,7 @@ export const ThemeSwitch = () => {
   return (
     <label className="theme-switch">
       <input
-        onChange={() => toggleTheme(theme === "light" ? "dark" : "light")}
+        onChange={() => toggleTheme()}
         type="checkbox"
         className="theme-switch__checkbox"
       />
