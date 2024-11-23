@@ -14,9 +14,11 @@ const config: Config = {
   moduleNameMapper: {
     // Force module uuid to resolve with the CJS entry point, because Jest does not support package.json.exports. See https://github.com/uuidjs/uuid/issues/451
     uuid: require.resolve("uuid"),
+    "three": "<rootDir>/tests/__mocks__/three.ts",
+    "three-stdlib": "<rootDir>/tests/__mocks__/three-stdlib.ts",
   },
-  coveragePathIgnorePatterns: ["/node_modules/", "/__tests__/__mocks__/"],
-  testPathIgnorePatterns: ["/node_modules/", "/__tests__/__mocks__/"],
+  coveragePathIgnorePatterns: ["/node_modules/", "/.next/", "/cypress/"],
+  testPathIgnorePatterns: ["/node_modules/", "/.next/", "/cypress/"],
   // Add more setup options before each test is run
 };
 
