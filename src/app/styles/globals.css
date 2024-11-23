@@ -55,3 +55,20 @@ body {
     text-wrap: balance;
   }
 }
+
+@keyframes shimmer {
+  0% {
+      background-position: 0 0
+  }
+
+  to {
+      background-position: -200% 0
+  }
+}
+
+.animate-shimmer {
+  animation: shimmer 2s linear infinite;
+}
+.animate-shimmer-slow {
+  animation: shimmer 12s linear infinite;
+}

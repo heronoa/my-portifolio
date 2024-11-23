@@ -19,7 +19,7 @@ describe("Overview Component", () => {
 
   test("it should have a call to action text", () => {
     render(<Overview />);
-    const callToActionText = screen.getByText(/Welcome/i);
+    const callToActionText = screen.getByText(/Heron Amaral/i);
     expect(callToActionText).toBeInTheDocument();
   });
 });

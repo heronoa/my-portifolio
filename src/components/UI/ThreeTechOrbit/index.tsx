@@ -55,7 +55,7 @@ const ThreeTechOrbit: React.FC = () => {
         "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nestjs/nestjs-original.svg",
       ),
       textureLoader.load(
-        "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/prisma/prisma-original.svg",
+        "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg",
       ),
       textureLoader.load(
         "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/firebase/firebase-original.svg",
@@ -161,7 +161,7 @@ const ThreeTechOrbit: React.FC = () => {
         cube.position.z = distance * Math.sin(angle);
       });
 
-      orbitSpeed += hoveredRef.current ? 0.001 : 0.01;
+      orbitSpeed += hoveredRef.current ? 0.001 : 0.03;
 
       controls.update();
       renderer.render(scene, camera);
