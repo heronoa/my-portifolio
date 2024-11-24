@@ -1,6 +1,11 @@
 import { useState, useEffect } from "react";
+import { HTMLAttributes } from "react";
 
-export const ThemeSwitch = () => {
+interface ThemeSwitchProps extends HTMLAttributes<HTMLLabelElement> {}
+
+export const ThemeSwitch: React.FC<ThemeSwitchProps> = (
+  props: ThemeSwitchProps,
+) => {
   const [theme, setTheme] = useState<string>("light");
 
   useEffect(() => {
@@ -19,7 +24,7 @@ export const ThemeSwitch = () => {
   };
 
   return (
-    <label className="theme-switch">
+    <label {...props} className={"theme-switch " + props.className}>
       <input
         onChange={() => toggleTheme()}
         type="checkbox"

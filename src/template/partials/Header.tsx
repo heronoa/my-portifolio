@@ -38,25 +38,26 @@ const Header: React.FC = () => {
           <Typography variant="h6" className="text-foreground">
             Welcome!
           </Typography>
-          <ThemeSwitch />
+          <ThemeSwitch className="scale-50 lg:scale-100" />
         </div>
 
-        <div className="flex items-center md:hidden">
+        <div className="flex items-center lg:hidden">
           <IconButton
             edge="start"
             className="text-foreground"
             aria-label="menu"
             onClick={toggleDrawer(true)}
           >
-            <MenuIcon />
+            <MenuIcon className="text-primary-light" />
           </IconButton>
         </div>
-        <List className="flex">
-          {["Home", "About", "Projects", "Contact"].map(text => (
+
+        <List className="lg:flex hidden">
+          {["home", "about", "projects", "contact"].map(text => (
             <Button
               key={text}
               variant="text"
-              href={text}
+              href={`#${text}`}
               className="text-neutral-light dark:text-neutral-gray"
             >
               {text}
@@ -64,26 +65,30 @@ const Header: React.FC = () => {
           ))}
         </List>
       </Toolbar>
-      <Drawer anchor="right" open={drawerOpen} onClose={toggleDrawer(false)}>
+      <Drawer
+        anchor="right"
+        PaperProps={{ className: "bg-primary dark:bg-dark" }}
+        open={drawerOpen}
+        onClose={toggleDrawer(false)}
+      >
         <div
-          className="w-64"
+          className="w-64 "
           role="presentation"
           onClick={toggleDrawer(false)}
           onKeyDown={toggleDrawer(false)}
         >
           <List>
-            <ListItem>
-              <ListItemText primary="Home" />
-            </ListItem>
-            <ListItem>
-              <ListItemText primary="About" />
-            </ListItem>
-            <ListItem>
-              <ListItemText primary="Projects" />
-            </ListItem>
-            <ListItem>
-              <ListItemText primary="Contact" />
-            </ListItem>
+            {["home", "about", "projects", "contact"].map(text => (
+              <ListItem key={text}>
+                <Button
+                  variant="text"
+                  href={`#${text}`}
+                  className="text-primary-light"
+                >
+                  {text}
+                </Button>
+              </ListItem>
+            ))}
           </List>
         </div>
       </Drawer>

@@ -5,14 +5,8 @@ import "tailwindcss/tailwind.css";
 const Projects: React.FC = () => {
   return (
     <Box
-      className="bg-primary dark:bg-dark"
-      sx={{
-        width: "100vw",
-        height: "100vh",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-      }}
+      className="bg-primary dark:bg-dark flex justify-center items-center w-screen h-screen"
+      id="projects"
     >
       <Container>
         <h1 className="text-white">Projects Section</h1>

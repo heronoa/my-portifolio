@@ -89,7 +89,7 @@ const ThreeTechOrbit: React.FC = () => {
         new THREE.MeshBasicMaterial({ transparent: true }), // Top face
         new THREE.MeshBasicMaterial({ transparent: true }), // Bottom face
         new THREE.MeshBasicMaterial({ map: texture, transparent: true }), // Front face
-        new THREE.MeshBasicMaterial({ transparent: true }), // Back face
+        new THREE.MeshBasicMaterial({ map: texture, transparent: true }), // Back face
       ];
       const cube = new THREE.Mesh(geometry, materials);
       scene.add(cube);
@@ -103,7 +103,7 @@ const ThreeTechOrbit: React.FC = () => {
         new THREE.MeshBasicMaterial({ transparent: true }), // Top face
         new THREE.MeshBasicMaterial({ transparent: true }), // Bottom face
         new THREE.MeshBasicMaterial({ map: texture, transparent: true }), // Front face
-        new THREE.MeshBasicMaterial({ transparent: true }), // Back face
+        new THREE.MeshBasicMaterial({ map: texture, transparent: true }), // Back face
       ];
       const cube = new THREE.Mesh(geometry, materials);
       scene.add(cube);
@@ -117,7 +117,7 @@ const ThreeTechOrbit: React.FC = () => {
         new THREE.MeshBasicMaterial({ transparent: true }), // Top face
         new THREE.MeshBasicMaterial({ transparent: true }), // Bottom face
         new THREE.MeshBasicMaterial({ map: texture, transparent: true }), // Front face
-        new THREE.MeshBasicMaterial({ transparent: true }), // Back face
+        new THREE.MeshBasicMaterial({ map: texture, transparent: true }), // Back face
       ];
       const cube = new THREE.Mesh(geometry, materials);
       scene.add(cube);
@@ -177,7 +177,7 @@ const ThreeTechOrbit: React.FC = () => {
   return (
     <div
       ref={mountRef}
-      style={{ width: "100%", height: "100vh" }}
+      className="w-full h-screen"
       onMouseEnter={() => (hoveredRef.current = true)}
       onMouseLeave={() => (hoveredRef.current = false)}
     />

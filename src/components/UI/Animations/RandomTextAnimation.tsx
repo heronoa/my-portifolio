@@ -24,11 +24,13 @@ const getRandomLetter = () => {
 const WritingAnimation: React.FC<WritingAnimationProps> = ({ text }) => {
   const [displayedText, setDisplayedText] = useState("");
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [bgColor, setBgColor] = useState(getRandomColor());
-  const [randomLetter, setRandomLetter] = useState(getRandomLetter());
+  const [bgColor, setBgColor] = useState<string | undefined>();
+  const [randomLetter, setRandomLetter] = useState<string | undefined>();
 
   useEffect(() => {
-    if (currentIndex < text.length) {
+    let isMounted = true;
+
+    if (isMounted && currentIndex < text.length) {
       const interval = setInterval(() => {
         setRandomLetter(getRandomLetter());
         setBgColor(getRandomColor());
@@ -45,10 +47,14 @@ const WritingAnimation: React.FC<WritingAnimationProps> = ({ text }) => {
         clearInterval(interval);
       };
     }
+
+    return () => {
+      isMounted = false;
+    };
   }, [currentIndex, text]);
 
   return (
-    <div className="flex gap-1">
+    <div className="flex gap-1 justify-center items-center lg:justify-start lg:items-start">
       {displayedText.split("").map((char, index) => (
         <span key={index}>{char}</span>
       ))}

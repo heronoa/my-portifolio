@@ -12,14 +12,14 @@ const GreetingsSection: React.FC = () => {
       <h1 className="relative z-20 text-primary-light text-4xl">
         <MovableBackgroundColor text="Heron Amaral" />
       </h1>
-      <p className="relative z-20 text-primary-light text-lg">
+      <p className="relative z-20 lg:text-xl font-bold bg-clip-text text-transparent animate-shimmer bg-[linear-gradient(110deg,#121212,45%,#EAF2F8,55%,#121212)] bg-[length:200%_100%]">
         I'm a full stack developer dedicated to create mordern and durable web
         service and web app.
       </p>
-      <p className="relative z-20 text-primary-light text-lg">
+      <div className="relative z-20 text-primary-light text-lg flex justify-center items-center lg:justify-start lg:items-start flex-col">
         Here you will find:
         <WritingAnimation
-          className="text-2xl text-dark-accentGold font-bold"
+          className="text-2xl text-dark-accentGold font-bold text-center lg:text-left"
           texts={[
             "Compromisse",
             "Dedication",
@@ -30,7 +30,7 @@ const GreetingsSection: React.FC = () => {
             "Excellence",
           ]}
         />
-      </p>
+      </div>
       <div>
         <Button
           className="inline-flex h-12 font-bold animate-shimmer items-center justify-center rounded-lg border border-slate-800 bg-[linear-gradient(110deg,#F1C40F,45%,#F39C12,55%,#F1C40F)] dark:bg-[linear-gradient(110deg,#F39C12,45%,#F1C40F,55%,#F39C12)] bg-[length:200%_100%] px-6 text-dark-light transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 gap-2"

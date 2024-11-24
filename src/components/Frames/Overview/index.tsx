@@ -8,31 +8,22 @@ const Overview: React.FC = () => {
     <div
       className="relative w-screen h-screen overflow-hidden"
       data-testid="overview"
+      id="home"
     >
       <div
         className="absolute inset-0 z-10 min-w-screen min-h-screen bg-cover bg-center bg-no-repeat filter blur-lg"
         style={{ backgroundImage: "url('images/me.webp')" }}
       />
-      <div className="flex justify-center items-center gap-4 relative z-20">
-        <div className="flex-1">
+      <div className="flex justify-center flex-col lg:flex-row items-center gap-4 relative z-20 text-center lg:text-left">
+        <div className="lg:flex-1">
           <GreetingsSection />
         </div>
-        <div className="flex-1">
+        <div className="lg:flex-1">
           <ThreeTechOrbit />
         </div>
       </div>
 
-      <Box
-        sx={{
-          width: "100%",
-          lineHeight: 0,
-          overflow: "hidden",
-          marginBottom: "-50px",
-          position: "absolute",
-          bottom: 0,
-          zIndex: 15, // Remove gap below the wave
-        }}
-      >
+      <Box className="w-full overflow-hidden mb-[-15px] lg:mb-[-50px] absolute bottom-0 z-[15] leading-0">
         <svg
           viewBox="0 0 1440 320"
           xmlns="http://www.w3.org/2000/svg"
