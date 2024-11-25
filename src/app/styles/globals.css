@@ -45,12 +45,9 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
+  background: linear-gradient(to bottom,
       transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+      rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
   scroll-behavior: smooth;
 }
 
@@ -65,7 +62,7 @@ body {
     background-position: 0 0;
   }
 
-  to {
+  100% {
     background-position: -200% 0;
   }
 }
@@ -79,12 +76,11 @@ body {
 }
 
 .animate-scroll {
-  animation: scroll var(--animation-duration, 40s)
-    var(--animation-direction, forwards) linear infinite;
+  animation: scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite;
 }
 
 @keyframes scroll {
   100% {
-    transform: translate(calc(-33.33334% - 0.5rem));
+    transform: translate(calc(-33.3333% - 0.5rem));
   }
 }

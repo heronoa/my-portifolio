@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./styles/globals.css";
 import "./styles/themeSwitch.css";
 import MainTemplate from "@/template";
+import Providers from "./Providers";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,10 +18,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
-        <MainTemplate>{children}</MainTemplate>
-      </body>
-    </html>
+    <Providers>
+      <html lang="en">
+        <body className={inter.className}>
+          <MainTemplate>{children}</MainTemplate>
+        </body>
+      </html>
+    </Providers>
   );
 }

@@ -8,8 +8,11 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Typography from "@mui/material/Typography";
 import { Drawer, List, ListItem, ListItemText, Button } from "@mui/material";
 import { ThemeSwitch } from "../../components/UI/ThemeSwitch";
+import { useTranslation } from "react-i18next";
+import { SwitchLanguage } from "@/components/UI/LanguageSwitch";
 
 const Header: React.FC = () => {
+  const { t } = useTranslation();
   const [drawerOpen, setDrawerOpen] = useState(false);
 
   const toggleDrawer =
@@ -35,10 +38,11 @@ const Header: React.FC = () => {
             alt="My logo"
             className="mr-2 rounded-full overflow-hidden"
           />
-          <Typography variant="h6" className="text-foreground">
-            Welcome!
+          <Typography variant="h6" className="text-foreground w-[110px]">
+            {t("welcome")}!
           </Typography>
           <ThemeSwitch className="scale-50 lg:scale-100" />
+          <SwitchLanguage />
         </div>
 
         <div className="flex items-center lg:hidden">
@@ -53,7 +57,7 @@ const Header: React.FC = () => {
         </div>
 
         <List className="lg:flex hidden">
-          {["home", "about", "projects", "contact"].map(text => (
+          {[t("home"), t("about"), t("projects"), t("contact")].map(text => (
             <Button
               key={text}
               variant="text"
@@ -78,7 +82,7 @@ const Header: React.FC = () => {
           onKeyDown={toggleDrawer(false)}
         >
           <List>
-            {["home", "about", "projects", "contact"].map(text => (
+            {[t("home"), t("about"), t("projects"), t("contact")].map(text => (
               <ListItem key={text}>
                 <Button
                   variant="text"

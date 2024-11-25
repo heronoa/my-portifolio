@@ -1,0 +1,8 @@
+{
+    "welcome": "Bem-vindo",
+    "description": "This is an example of i18next usage in React.",
+    "home": "inicio",
+    "about": "sobre",
+    "contact": "contato",
+    "projects": "projetos"
+}
