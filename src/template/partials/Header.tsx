@@ -1,36 +1,19 @@
-"use client";
 import React, { useState } from "react";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
-import IconButton from "@mui/material/IconButton";
-import MenuIcon from "@mui/icons-material/Menu";
-import Typography from "@mui/material/Typography";
-import { Drawer, List, ListItem, ListItemText, Button } from "@mui/material";
+import { List, Button } from "@mui/material";
 import { ThemeSwitch } from "../../components/UI/ThemeSwitch";
-import { useTranslation } from "react-i18next";
-import { SwitchLanguage } from "@/components/UI/LanguageSwitch";
+import MobileMenu from "./MobileMenu";
 
 const Header: React.FC = () => {
-  const { t } = useTranslation();
-  const [drawerOpen, setDrawerOpen] = useState(false);
-
-  const toggleDrawer =
-    (open: boolean) => (event: React.KeyboardEvent | React.MouseEvent) => {
-      if (
-        event.type === "keydown" &&
-        ((event as React.KeyboardEvent).key === "Tab" ||
-          (event as React.KeyboardEvent).key === "Shift")
-      ) {
-        return;
-      }
-      setDrawerOpen(open);
-    };
+  const t = useTranslations();
 
   return (
-    <AppBar position="sticky" className="bg-primary dark:bg-dark">
+    <AppBar position="sticky" className="bg-primary dark:bg-dark relative">
       <Toolbar className="flex justify-between">
-        <div className="flex items-center gap-4">
+        <div className="flex items-center lg:gap-4">
           <Image
             src="/images/realme.jpeg"
             width={32}
@@ -38,30 +21,15 @@ const Header: React.FC = () => {
             alt="My logo"
             className="mr-2 rounded-full overflow-hidden"
           />
-          <Typography variant="h6" className="text-foreground w-[110px]">
-            {t("welcome")}!
-          </Typography>
-          <ThemeSwitch className="scale-50 lg:scale-100" />
-          <SwitchLanguage />
-        </div>
-
-        <div className="flex items-center lg:hidden">
-          <IconButton
-            edge="start"
-            className="text-foreground"
-            aria-label="menu"
-            onClick={toggleDrawer(true)}
-          >
-            <MenuIcon className="text-primary-light" />
-          </IconButton>
+          <ThemeSwitch className="scale-50 lg:scale-100 -mx-[10px]" />
         </div>
 
         <List className="lg:flex hidden">
-          {[t("home"), t("about"), t("projects"), t("contact")].map(text => (
+          {["home", "about", "projects", "contact"].map(text => (
             <Button
               key={text}
               variant="text"
-              href={`#${text}`}
+              href={"#" + text}
               className="text-neutral-light dark:text-neutral-gray"
             >
               {text}
@@ -69,33 +37,7 @@ const Header: React.FC = () => {
           ))}
         </List>
       </Toolbar>
-      <Drawer
-        anchor="right"
-        PaperProps={{ className: "bg-primary dark:bg-dark" }}
-        open={drawerOpen}
-        onClose={toggleDrawer(false)}
-      >
-        <div
-          className="w-64 "
-          role="presentation"
-          onClick={toggleDrawer(false)}
-          onKeyDown={toggleDrawer(false)}
-        >
-          <List>
-            {[t("home"), t("about"), t("projects"), t("contact")].map(text => (
-              <ListItem key={text}>
-                <Button
-                  variant="text"
-                  href={`#${text}`}
-                  className="text-primary-light"
-                >
-                  {text}
-                </Button>
-              </ListItem>
-            ))}
-          </List>
-        </div>
-      </Drawer>
+      <MobileMenu />
     </AppBar>
   );
 };

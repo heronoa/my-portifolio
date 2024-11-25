@@ -1,7 +1,6 @@
 import WavyDivider from "@/components/UI/Divider";
 import GreetingsSection from "@/components/UI/GreetingsSection";
 import ThreeTechOrbit from "@/components/UI/ThreeTechOrbit";
-import { Box } from "@mui/material";
 import React from "react";
 
 const Overview: React.FC = () => {
