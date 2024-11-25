@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Image from "next/image";
-import { useTranslations } from "next-intl";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import { List, Button } from "@mui/material";
@@ -8,8 +7,6 @@ import { ThemeSwitch } from "../../components/UI/ThemeSwitch";
 import MobileMenu from "./MobileMenu";
 
 const Header: React.FC = () => {
-  const t = useTranslations();
-
   return (
     <AppBar position="sticky" className="bg-primary dark:bg-dark relative">
       <Toolbar className="flex justify-between">
