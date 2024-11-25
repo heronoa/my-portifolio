@@ -3,19 +3,19 @@
 @tailwind utilities;
 
 :root {
-  --color-primary: #1F3A93;
-  --color-primary-light: #EAF2F8;
-  --color-accent-green: #27AE60;
-  --color-accent-gold: #F1C40F;
-  --color-accent-purple: #8E44AD;
+  --color-primary: #1f3a93;
+  --color-primary-light: #eaf2f8;
+  --color-accent-green: #27ae60;
+  --color-accent-gold: #f1c40f;
+  --color-accent-purple: #8e44ad;
   --color-neutral-light: #efebeb;
-  --color-neutral-gray: #ECF0F1;
+  --color-neutral-gray: #ecf0f1;
   --color-dark: #121212;
-  --color-dark-light: #1C1C1C;
-  --color-dark-accent-green: #2ECC71;
-  --color-dark-accent-gold: #F39C12;
-  --color-dark-accent-purple: #9B59B6;
-  --color-dark-gray: #7F8C8D;
+  --color-dark-light: #1c1c1c;
+  --color-dark-accent-green: #2ecc71;
+  --color-dark-accent-gold: #f39c12;
+  --color-dark-accent-purple: #9b59b6;
+  --color-dark-gray: #7f8c8d;
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
@@ -24,19 +24,19 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --color-primary: #121212;
-    --color-primary-light: #1C1C1C;
-    --color-accent-green: #2ECC71;
-    --color-accent-gold: #F39C12;
-    --color-accent-purple: #9B59B6;
-    --color-neutral-light: #7F8C8D;
-    --color-neutral-gray: #ECF0F1;
-    --color-light-primary: #1F3A93;
-    --color-light-primary-light: #EAF2F8;
-    --color-light-accent-green: #27AE60;
-    --color-light-accent-gold: #F1C40F;
-    --color-light-accent-purple: #8E44AD;
+    --color-primary-light: #1c1c1c;
+    --color-accent-green: #2ecc71;
+    --color-accent-gold: #f39c12;
+    --color-accent-purple: #9b59b6;
+    --color-neutral-light: #7f8c8d;
+    --color-neutral-gray: #ecf0f1;
+    --color-light-primary: #1f3a93;
+    --color-light-primary-light: #eaf2f8;
+    --color-light-accent-green: #27ae60;
+    --color-light-accent-gold: #f1c40f;
+    --color-light-accent-purple: #8e44ad;
     --color-light-neutral-light: #efebeb;
-    --color-light-neutral-gray: #ECF0F1;
+    --color-light-neutral-gray: #ecf0f1;
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
@@ -45,9 +45,12 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(to bottom,
+  background: linear-gradient(
+      to bottom,
       transparent,
-      rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
   scroll-behavior: smooth;
 }
 
@@ -59,17 +62,29 @@ body {
 
 @keyframes shimmer {
   0% {
-      background-position: 0 0
+    background-position: 0 0;
   }
 
   to {
-      background-position: -200% 0
+    background-position: -200% 0;
   }
 }
 
 .animate-shimmer {
   animation: shimmer 2s linear infinite;
 }
+
 .animate-shimmer-slow {
   animation: shimmer 12s linear infinite;
+}
+
+.animate-scroll {
+  animation: scroll var(--animation-duration, 40s)
+    var(--animation-direction, forwards) linear infinite;
+}
+
+@keyframes scroll {
+  100% {
+    transform: translate(calc(-33.33334% - 0.5rem));
+  }
 }
