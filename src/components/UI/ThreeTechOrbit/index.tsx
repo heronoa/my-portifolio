@@ -177,7 +177,7 @@ const ThreeTechOrbit: React.FC = () => {
   return (
     <div
       ref={mountRef}
-      className="w-full h-screen"
+      className="w-screen lg:w-full h-screen"
       onMouseEnter={() => (hoveredRef.current = true)}
       onMouseLeave={() => (hoveredRef.current = false)}
     />

@@ -18,7 +18,7 @@ const Overview: React.FC = () => {
         <div className="lg:flex-1">
           <GreetingsSection />
         </div>
-        <div className="lg:flex-1 hidden lg:block">
+        <div className="lg:flex-1 absolute lg:static -z-20 lg:z-0">
           <ThreeTechOrbit />
         </div>
       </div>
