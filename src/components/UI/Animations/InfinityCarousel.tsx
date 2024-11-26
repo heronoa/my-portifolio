@@ -17,8 +17,6 @@ const InfinityCarousel: React.FC<Props> = ({ images, reverse }: Props) => {
           "--animation-duration": "20s",
         } as React.CSSProperties
       }
-      data-sentry-component="InfiniteMovingCards"
-      data-sentry-source-file="InfiniteMovingCards.tsx"
     >
       <ul className="flex min-w-full shrink-0 gap-4 py-4 w-max flex-nowrap animate-scroll">
         {Array(3)
