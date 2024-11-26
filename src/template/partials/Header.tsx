@@ -8,33 +8,35 @@ import MobileMenu from "./MobileMenu";
 
 const Header: React.FC = () => {
   return (
-    <AppBar position="sticky" className="bg-primary dark:bg-dark relative">
-      <Toolbar className="flex justify-between">
-        <div className="flex items-center lg:gap-4">
-          <Image
-            src="/images/realme.jpeg"
-            width={32}
-            height={32}
-            alt="My logo"
-            className="mr-2 rounded-full overflow-hidden"
-          />
-          <ThemeSwitch className="scale-50 lg:scale-100 -mx-[10px]" />
-        </div>
+    <AppBar position="sticky" className="bg-primary dark:bg-dark">
+      <div className="relative">
+        <Toolbar className="flex justify-between">
+          <div className="flex items-center lg:gap-4">
+            <Image
+              src="/images/realme.jpeg"
+              width={32}
+              height={32}
+              alt="My logo"
+              className="mr-2 rounded-full overflow-hidden"
+            />
+            <ThemeSwitch className="scale-50 lg:scale-100 -mx-[10px]" />
+          </div>
 
-        <List className="lg:flex hidden">
-          {["home", "about", "projects", "contact"].map(text => (
-            <Button
-              key={text}
-              variant="text"
-              href={"#" + text}
-              className="text-neutral-light dark:text-neutral-gray"
-            >
-              {text}
-            </Button>
-          ))}
-        </List>
-      </Toolbar>
-      <MobileMenu />
+          <List className="lg:flex hidden">
+            {["home", "about", "projects", "contact"].map(text => (
+              <Button
+                key={text}
+                variant="text"
+                href={"#" + text}
+                className="text-neutral-light dark:text-neutral-gray"
+              >
+                {text}
+              </Button>
+            ))}
+          </List>
+        </Toolbar>
+        <MobileMenu />
+      </div>
     </AppBar>
   );
 };

@@ -8,7 +8,7 @@ interface Props {
 const InfinityCarousel: React.FC<Props> = ({ images, reverse }: Props) => {
   return (
     <div
-      className="scroller relative max-w-7xl overflow-hidden [mask-image:linear-gradient(to right,transparent,white_20%,white_80%,transparent)] z-[999]"
+      className="scroller relative max-w-screen overflow-hidden [mask-image:linear-gradient(to right,transparent,white_20%,white_80%,transparent)] z-[999]"
       style={
         {
           "--animation-direction": reverse ? "reverse" : "normal",

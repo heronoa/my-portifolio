@@ -1,8 +1,12 @@
+"use client";
 import React from "react";
 import { Container, Box } from "@mui/material";
 import "tailwindcss/tailwind.css";
-import WavyDivider from "@/components/UI/Divider";
+import WavyDivider from "@/components/UI/Divider/WavyDivider";
 import InfinityCarousel from "@/components/UI/Animations/InfinityCarousel";
+import { motion } from "framer-motion";
+import AboutContent from "@/components/UI/AboutContent";
+
 const techs = [
   {
     src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg",
@@ -89,13 +93,13 @@ const techs = [
 const About: React.FC = () => {
   return (
     <Box
-      className="bg-primary dark:bg-dark flex flex-col justify-center items-center w-screen h-screen relative pb-[200px] z-20"
+      className="bg-primary dark:bg-dark flex flex-col justify-start items-start w-screen min-h-screen relative pb-[40px] lg:pb-[300px] z-20"
       id="projects"
     >
-      <Container className="w-full">
-        <h1 className="text-white">About Section</h1>
+      <Container className="w-full mb-8">
+        <AboutContent />
       </Container>
-      <Container className="w-full h-[200px]">
+      <Box className="w-full !max-w-screen h-[200px]">
         <InfinityCarousel
           images={techs.slice(Math.ceil(techs.length / 2), techs.length)}
         />
@@ -103,7 +107,7 @@ const About: React.FC = () => {
           reverse
           images={techs.slice(0, Math.ceil(techs.length / 2))}
         />
-      </Container>
+      </Box>
       <WavyDivider
         lowerColorClassName="!fill-primary-light dark:!fill-dark-accentPurple"
         upperClassName="lg:!mb-[30px] !mb-[15px]"

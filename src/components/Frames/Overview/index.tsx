@@ -1,4 +1,4 @@
-import WavyDivider from "@/components/UI/Divider";
+import WavyDivider from "@/components/UI/Divider/WavyDivider";
 import GreetingsSection from "@/components/UI/GreetingsSection";
 import ThreeTechOrbit from "@/components/UI/ThreeTechOrbit";
 import React from "react";
