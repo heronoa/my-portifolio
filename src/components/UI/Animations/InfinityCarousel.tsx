@@ -1,5 +1,7 @@
+import { Tooltip } from "@mui/material";
 import React from "react";
-
+import Image from "next/image";
+import Zoom from "@mui/material/Zoom";
 interface Props {
   images: { src: string; alt: string }[];
   reverse?: boolean;
@@ -19,42 +21,33 @@ const InfinityCarousel: React.FC<Props> = ({ images, reverse }: Props) => {
       data-sentry-source-file="InfiniteMovingCards.tsx"
     >
       <ul className="flex min-w-full shrink-0 gap-4 py-4 w-max flex-nowrap animate-scroll">
-        {images.map((item, index) => (
-          <li
-            key={index}
-            className="w-20 max-w-full relative rounded-2xl flex-shrink-0 items-center mr-5"
-          >
-            <img
-              src={item.src}
-              alt={item.alt}
-              className="lg:w-32 md:w-20 w-16 items-center"
-            />
-          </li>
-        ))}
-        {images.map((item, index) => (
-          <li
-            key={index}
-            className="w-20 max-w-full relative rounded-2xl flex-shrink-0 items-center mr-5"
-          >
-            <img
-              src={item.src}
-              alt={item.alt}
-              className="lg:w-32 md:w-20 w-16 items-center"
-            />
-          </li>
-        ))}
-        {images.map((item, index) => (
-          <li
-            key={index}
-            className="w-20 max-w-full relative rounded-2xl flex-shrink-0 items-center mr-5"
-          >
-            <img
-              src={item.src}
-              alt={item.alt}
-              className="lg:w-32 md:w-20 w-16 items-center"
-            />
-          </li>
-        ))}
+        {Array(3)
+          .fill(images)
+          .flat()
+          .map((item, index) => (
+            <li
+              key={index}
+              className="w-20 max-w-full relative rounded-2xl flex-shrink-0 items-center mr-5"
+            >
+              <Tooltip
+                title={item.alt}
+                slots={{
+                  transition: Zoom,
+                }}
+                arrow
+                followCursor
+                placement="top"
+              >
+                <Image
+                  src={item.src}
+                  alt={item.alt}
+                  width={80}
+                  height={80}
+                  className="lg:w-32 md:w-20 w-16 items-center grayscale hover:grayscale-0 transition-all duration-300"
+                />
+              </Tooltip>
+            </li>
+          ))}
       </ul>
     </div>
   );

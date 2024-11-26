@@ -1,10 +1,8 @@
-"use client";
 import React from "react";
 import { Container, Box } from "@mui/material";
 import "tailwindcss/tailwind.css";
 import WavyDivider from "@/components/UI/Divider/WavyDivider";
 import InfinityCarousel from "@/components/UI/Animations/InfinityCarousel";
-import { motion } from "framer-motion";
 import AboutContent from "@/components/UI/AboutContent";
 
 const techs = [
@@ -88,6 +86,10 @@ const techs = [
     src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cypressio/cypressio-original.svg",
     alt: "Cypress",
   },
+  {
+    src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/threejs/threejs-original.svg",
+    alt: "Three.js",
+  },
 ];
 
 const About: React.FC = () => {
@@ -96,6 +98,10 @@ const About: React.FC = () => {
       className="bg-primary dark:bg-dark flex flex-col justify-start items-start w-screen min-h-screen relative pb-[40px] lg:pb-[300px] z-20"
       id="projects"
     >
+      <div className="absolute inset-0 w-full h-full">
+        <div className="-bottom-[9%] md:-bottom-[24%] 2xl:-bottom-[99%] -left-[49%] absolute blur-3xl bg-dark dark:bg-dark-light rounded-full w-full aspect-square"></div>
+        <div className="-bottom-[10%] md:-bottom-[25%] 2xl:-bottom-[100%] -left-[50%] absolute bg-accent-green dark:bg-dark-accentGreen rounded-full w-full aspect-square"></div>
+      </div>
       <Container className="w-full mb-8">
         <AboutContent />
       </Container>

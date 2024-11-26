@@ -12,7 +12,7 @@ const containerVariants = {
 const AboutContent: React.FC = () => {
   return (
     <motion.div initial="hidden" animate="visible" variants={containerVariants}>
-      <h1 className="text-center mb-8 lg:text-4xl  text-2xl ont-bold bg-clip-text text-transparent animate-shimmer bg-[linear-gradient(110deg,#121212,45%,#EAF2F8,55%,#121212)] bg-[length:200%_100%]">
+      <h1 className="text-center mb-8 lg:text-4xl text-2xl font-bold bg-clip-text text-transparent animate-shimmer bg-[linear-gradient(110deg,#121212,45%,#EAF2F8,55%,#121212)] bg-[length:200%_100%]">
         About Me
       </h1>
       <div className="flex flex-col lg:flex-row gap-4">

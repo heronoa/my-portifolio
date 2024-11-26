@@ -10,8 +10,8 @@ const Projects: React.FC = () => {
       id="projects"
     >
       <Container className="w-full h-full">
-        <h1 className="dark:text-white text-dark text-center">
-          Projects Section
+        <h1 className="text-center mb-8 lg:text-4xl text-2xl font-bold bg-clip-text text-transparent animate-shimmer bg-[linear-gradient(110deg,#121212,45%,#EAF2F8,55%,#121212)] bg-[length:200%_100%]">
+          My Projects
         </h1>
       </Container>
       <GradientDivider
