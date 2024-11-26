@@ -14,7 +14,7 @@ const Contacts: React.FC = () => {
 
   return (
     <div
-      className="flex justify-center items-center w-screen h-screen bg-dark-light dark:bg-dark"
+      className="flex relative z-20 justify-center items-center w-screen h-screen bg-dark-light dark:bg-dark"
       id="contact"
     >
       <form
