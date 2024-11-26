@@ -98,7 +98,7 @@ const About: React.FC = () => {
       className="bg-primary dark:bg-dark flex flex-col justify-start items-start w-screen min-h-screen relative pb-[40px] lg:pb-[300px] z-20"
       id="projects"
     >
-      <div className="absolute inset-0 w-full h-full">
+      <div className="absolute inset-0 w-full h-full -z-10">
         <div className="-bottom-[9%] md:-bottom-[24%] 2xl:-bottom-[99%] -left-[49%] absolute blur-3xl bg-dark dark:bg-primary-light rounded-full w-full aspect-square"></div>
         <div className="-bottom-[10%] md:-bottom-[25%] 2xl:-bottom-[100%] -left-[50%] absolute bg-accent-green dark:bg-dark-accentGreen rounded-full w-full aspect-square"></div>
       </div>

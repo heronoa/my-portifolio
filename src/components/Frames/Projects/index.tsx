@@ -7,7 +7,7 @@ import InteractableCarousel from "@/components/UI/Carousel/InteractableCarousel"
 const Projects: React.FC = () => {
   return (
     <Box
-      className="bg-primary-light relative dark:bg-dark-accentPurple flex justify-center items-center w-screen h-screen  pb-[40px] z-20"
+      className="bg-primary-light relative dark:bg-dark-accentPurple flex justify-center items-center w-screen min-h-screen  pb-[40px] z-20"
       id="projects"
     >
       <Box className="w-full h-full lg:mt-[-100px]">
