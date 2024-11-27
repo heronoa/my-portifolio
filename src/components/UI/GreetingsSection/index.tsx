@@ -12,14 +12,14 @@ import MovableBackgroundColor from "../Animations/MovableBackgroundColor";
 const GreetingsSection: React.FC = () => {
   return (
     <div className="p-14 flex flex-col gap-4 relative mt-12 lg:mt-0 lg:ml-12 max-w-[90vw] h-[70vh] lg:h-auto">
-      <div className="absolute inset-0 -z-10 bg-black/20 rounded-lg shadow-[0_4px_30px_rgba(0,0,0,0.1)] backdrop-blur-sm border border-black/30" />
+      <div className="absolute inset-0 -z-10 bg-black/50 rounded-lg shadow-[0_4px_30px_rgba(0,0,0,0.1)] backdrop-blur-sm border border-black/30" />
       <RandomTextAnimation text="Hello World!" />
       <p className="relative z-20 text-primary-light text-md">My name is</p>
 
       <h1 className="relative z-20 text-primary-light text-4xl">
         <MovableBackgroundColor text="Heron Amaral" />
       </h1>
-      <span className="flex justify-start items-start gap-3">
+      <span className="flex justify-center items-center  lg:justify-start lg:items-start gap-3">
         <Link href="https://github.com/heronoa">
           <GitHubIcon />
         </Link>

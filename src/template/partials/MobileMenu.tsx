@@ -40,7 +40,7 @@ const MobileMenu: React.FC = () => {
                 <Button
                   variant="text"
                   href={`#${text}`}
-                  className="text-primary-light"
+                  className="!text-primary-light"
                 >
                   {text}
                 </Button>
