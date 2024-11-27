@@ -16,7 +16,82 @@ const Projects: React.FC = () => {
         </h1>
         <div className="flex justify-center items-center">
           <InteractableCarousel
-            slides={[1, 2, 3, 4, 5]}
+            slides={[
+              {
+                img: "/images/dev-manager.png",
+                title: "Dev Manager",
+                description:
+                  "Web app to manager developers team, with analytics, login system and projects creation",
+                tech: [
+                  "nextjs",
+                  "tailwindcss",
+                  "framermotion",
+                  "firebase",
+                  "react",
+                  "typescript",
+                ],
+                url: "https://github.com/heronoa/developer_manager",
+              },
+              {
+                img: "/images/payments-api.png",
+                title: "Payments Api",
+                description: "Web app to manager debts",
+                tech: ["nodejs", "mongodb", "express", "typescript", "prisma"],
+                url: "https://github.com/heronoa/payments-api",
+              },
+              {
+                img: "/images/portifolio.png",
+                title: "Portifolio",
+                description:
+                  "This current website. If you are curious on how I make it",
+                tech: [
+                  "nextjs",
+                  "tailwindcss",
+                  "threejs",
+                  "react",
+                  "eslint",
+                  "typescript",
+                ],
+                url: "https://github.com/heronoa/my-portifolio",
+              },
+              {
+                img: "/images/vuejs-turnbased-game.png",
+                title: "Vuejs Turn-Based Game",
+                description:
+                  "A turn based game where you can create character play against bots or real players created to pratice vuejs",
+                tech: [
+                  "vuejs",
+                  "tailwindcss",
+                  "cypressio",
+                  "eslint",
+                  "typescript",
+                ],
+                url: "https://github.com/heronoa/vuejs-turnbased-game",
+              },
+              {
+                img: "/images/turnbased-game-server.png",
+                title: "Node Turn-Based Game Server",
+                description:
+                  "The server-side of a turn based game, featuring matchmaking and socket connection, also build login and sign systems",
+                tech: ["nodejs", "mongodb", "express", "typescript", "prisma"],
+                url: "https://github.com/heronoa/colyseus-turngame",
+              },
+              {
+                img: "/images/rabbitmq.png",
+                title: "RabbitMQ MicroServices Example",
+                description:
+                  "A sample on how to build a microservices architecture using RabbitMQ and practice clean architecture",
+                tech: [
+                  "nodejs",
+                  "mongodb",
+                  "express",
+                  "javascript",
+                  "mongoose",
+                  "rabbitmq",
+                ],
+                url: "https://github.com/heronoa/rabbitmq-getting-start",
+              },
+            ]}
             options={{ loop: true }}
             className="w-[90%] max-w-[1400px]"
           />
@@ -24,7 +99,7 @@ const Projects: React.FC = () => {
       </Box>
       <GradientDivider
         height="200px"
-        className="to-primary-light dark:to-dark-accentPurple via-dark-light dark:via-dark from-dark-light dark:from-dark bg-gradient-to-t bottom-0 absolute z-30"
+        className="to-primary-light dark:to-dark-accentPurple via-dark-light dark:via-dark from-dark-light dark:from-dark bg-gradient-to-t -bottom-[1px] absolute z-30"
       />
     </Box>
   );

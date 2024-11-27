@@ -24,7 +24,7 @@ const AboutContent: React.FC = () => {
                   const rect = e.currentTarget.getBoundingClientRect();
                   const x = e.clientX - rect.left - rect.width / 2;
                   const y = e.clientY - rect.top - rect.height / 2;
-                  e.currentTarget.style.transform = `rotateY(${x / 10}deg) rotateX(${-y / 10}deg)`;
+                  e.currentTarget.style.transform = `rotateY(${-x / 5}deg) rotateX(${-y / 5}deg)`;
                 }}
                 onMouseLeave={e => {
                   e.currentTarget.style.transform =

@@ -1,6 +1,11 @@
 "use client";
 import React, { useState } from "react";
-import "tailwindcss/tailwind.css";
+import Link from "next/link";
+import { Container, Box, Button } from "@mui/material";
+
+import GitHubIcon from "@mui/icons-material/GitHub";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import EmailIcon from "@mui/icons-material/Email";
 
 const Contacts: React.FC = () => {
   const [name, setName] = useState("");
@@ -13,73 +18,73 @@ const Contacts: React.FC = () => {
   };
 
   return (
-    <div
-      className="flex relative z-20 justify-center items-center w-screen h-screen bg-dark-light dark:bg-dark"
+    <Box
+      className="flex relative z-20 justify-start items-start w-screen h-screen bg-dark-light dark:bg-dark"
       id="contact"
     >
-      <form
-        onSubmit={handleSubmit}
-        className="bg-white dark:bg-accent-purple p-8 rounded-lg shadow-lg w-full max-w-lg border-4 border-transparent animate-border-gradient"
-      >
-        <h2 className="text-2xl font-bold mb-6 text-center text-primary dark:text-white">
-          Contact Us
+      <Container className="container mx-auto p-4">
+        <h2 className="text-center font-extrabold text-2xl text-transparent animate-shimmer bg-clip-text  bg-[linear-gradient(110deg,#F1C40F,45%,#FFFFFF,55%,#F1C40F)] dark:bg-[linear-gradient(110deg,#F39C12,45%,#FFFFFF,55%,#F39C12)] bg-[length:200%_100%]">
+          Do you want a website like this?
         </h2>
-        <div className="mb-4">
-          <label
-            className="block text-primary dark:text-white mb-2"
-            htmlFor="name"
-          >
-            Name
-          </label>
-          <input
-            type="text"
-            id="name"
-            value={name}
-            onChange={e => setName(e.target.value)}
-            className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary dark:focus:ring-dark-accentGold"
-            required
-          />
+        <div className="flex flex-col lg:flex-row">
+          <Button className="font-bold min-h-[160px] flex-1">
+            <div className="flex flex-col items-center">
+              <p className="normal-case">Send me a email</p>
+              <EmailIcon fontSize="large" />
+              <a href="mailto:heronoadev@gmail.com" className="hover:underline">
+                heronoadev@gmail.com
+              </a>
+              <a
+                href="mailto:heron.amaral@gmail.com"
+                className="hover:underline"
+              >
+                heron.amaral@gmail.com
+              </a>
+              <a
+                href="mailto:heron-amaral@outlook.com"
+                className="hover:underline"
+              >
+                heron-amaral@outlook.com
+              </a>
+            </div>
+          </Button>
+          <div className="flex flex-col items-center justify-center">
+            <div className="h-1/2 w-px bg-gray-400"></div>
+          </div>
+          <Button className="font-bold min-h-[160px] flex-1">
+            <Link
+              href="https://github.com/yourusername"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-2"
+            >
+              <div className="flex flex-col items-center">
+                <p className="normal-case">Take a look on my project</p>
+                <GitHubIcon fontSize="large" />
+                github.com/heronoa
+              </div>
+            </Link>
+          </Button>
+          <div className="flex flex-col items-center justify-center">
+            <div className="h-1/2 w-px bg-gray-400"></div>
+          </div>
+          <Button className="font-bold min-h-[160px] flex-1">
+            <Link
+              href="https://www.linkedin.com/in/heron-amaral-49a9a1179/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-2"
+            >
+              <div className="flex flex-col items-center">
+                <p className="normal-case">Connect with me</p>
+                <LinkedInIcon fontSize="large" />
+                Heron Amaral
+              </div>
+            </Link>
+          </Button>
         </div>
-        <div className="mb-4">
-          <label
-            className="block text-primary dark:text-white mb-2"
-            htmlFor="email"
-          >
-            Email
-          </label>
-          <input
-            type="email"
-            id="email"
-            value={email}
-            onChange={e => setEmail(e.target.value)}
-            className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary dark:focus:ring-dark-accentGold"
-            required
-          />
-        </div>
-        <div className="mb-6">
-          <label
-            className="block text-primary dark:text-white mb-2"
-            htmlFor="message"
-          >
-            Message
-          </label>
-          <textarea
-            id="message"
-            value={message}
-            onChange={e => setMessage(e.target.value)}
-            className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary dark:focus:ring-dark-accentGold"
-            rows={4}
-            required
-          />
-        </div>
-        <button
-          type="submit"
-          className="w-full bg-primary dark:bg-dark-accentGold text-white font-bold py-2 px-4 rounded-md hover:bg-primary-dark dark:hover:bg-dark-accentPurple transition-colors"
-        >
-          Send Message
-        </button>
-      </form>
-    </div>
+      </Container>
+    </Box>
   );
 };
 

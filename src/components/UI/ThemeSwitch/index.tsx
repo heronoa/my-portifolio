@@ -30,6 +30,7 @@ export const ThemeSwitch: React.FC<ThemeSwitchProps> = (
         onChange={() => toggleTheme()}
         type="checkbox"
         className="theme-switch__checkbox"
+        checked={theme === "dark"}
       />
       <div className="theme-switch__container">
         <div className="theme-switch__clouds"></div>
