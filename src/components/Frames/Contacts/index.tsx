@@ -10,8 +10,11 @@ import ThreeDLetters from "@/components/UI/ThreeDLetters";
 
 const Contacts: React.FC = () => {
   return (
-    <Box className="flex flex-col relative z-20 justify-start items-start w-screen min-h-md lg:h-[500px] mb-6 lg:mb-0 bg-black">
-      <Container className="container mx-auto p-4 z-10" id="contact">
+    <Box
+      className="flex flex-col relative z-20 justify-start items-start w-screen min-h-md lg:h-[500px] mb-6 lg:mb-0 bg-black"
+      id="contact"
+    >
+      <Container className="container mx-auto p-4 z-10">
         <h2 className="text-center font-extrabold text-2xl text-transparent animate-shimmer bg-clip-text  bg-[linear-gradient(110deg,#F1C40F,45%,#FFFFFF,55%,#F1C40F)] dark:bg-[linear-gradient(110deg,#F39C12,45%,#FFFFFF,55%,#F39C12)] bg-[length:200%_100%]">
           Do you want a website like this?
         </h2>
