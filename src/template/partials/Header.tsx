@@ -8,7 +8,7 @@ import MobileMenu from "./MobileMenu";
 
 const Header: React.FC = () => {
   return (
-    <AppBar position="sticky" className="bg-primary dark:bg-dark">
+    <AppBar position="sticky" className="!bg-primary dark:!bg-dark">
       <div className="relative">
         <Toolbar className="flex justify-between">
           <div className="flex items-center lg:gap-4">
@@ -28,7 +28,7 @@ const Header: React.FC = () => {
                 key={text}
                 variant="text"
                 href={"#" + text}
-                className="text-neutral-light dark:text-neutral-gray"
+                className="!text-neutral-light dark:!text-neutral-gray"
               >
                 {text}
               </Button>

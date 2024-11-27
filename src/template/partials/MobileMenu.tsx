@@ -9,14 +9,6 @@ const MobileMenu: React.FC = () => {
 
   const toggleDrawer =
     (open: boolean) => (event: React.KeyboardEvent | React.MouseEvent) => {
-      if (
-        event.type === "keydown" &&
-        ((event as React.KeyboardEvent).key === "Tab" ||
-          (event as React.KeyboardEvent).key === "Shift")
-      ) {
-        return;
-      }
-
       setDrawerOpen(open);
     };
 
@@ -28,11 +20,11 @@ const MobileMenu: React.FC = () => {
         aria-label="menu"
         onClick={toggleDrawer(true)}
       >
-        <MenuIcon className="text-primary-light" />
+        <MenuIcon className="!text-primary-light" />
       </IconButton>
       <Drawer
         anchor="right"
-        PaperProps={{ className: "bg-primary dark:bg-dark" }}
+        PaperProps={{ className: "!bg-primary dark:!bg-dark" }}
         open={drawerOpen}
         onClose={toggleDrawer(false)}
       >
