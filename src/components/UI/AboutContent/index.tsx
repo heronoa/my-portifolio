@@ -67,7 +67,7 @@ const AboutContent: React.FC = () => {
           </>
         </BoxWithAnimatedBorder>
         <div className="flex flex-1 flex-col gap-4">
-          <BoxWithAnimatedBorder bgClassName="w-full h-full">
+          <BoxWithAnimatedBorder bgClassName="w-full h-full flex justify-center items-center">
             <p className="overflow-visible">
               I study physics at the Federal University of Pará and there have
               my first contact with programming solving problem on a
@@ -78,7 +78,7 @@ const AboutContent: React.FC = () => {
               with the objective to live solving problems with techonology
             </p>
           </BoxWithAnimatedBorder>
-          <BoxWithAnimatedBorder bgClassName="w-full h-full">
+          <BoxWithAnimatedBorder bgClassName="w-full h-full flex justify-center items-center">
             <p className="overflow-visible">
               Nowdays I'm a full stack developer dedicated to create mordern and
               durable web service and web app. I have experienced all the steps

@@ -1,3 +1,9 @@
+import Link from "next/link";
+
+import GitHubIcon from "@mui/icons-material/GitHub";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import EmailIcon from "@mui/icons-material/Email";
+
 import { Button } from "@mui/material";
 import RandomTextAnimation from "../Animations/RandomTextAnimation";
 import WritingAnimation from "../Animations/WritingAnimation";
@@ -13,6 +19,17 @@ const GreetingsSection: React.FC = () => {
       <h1 className="relative z-20 text-primary-light text-4xl">
         <MovableBackgroundColor text="Heron Amaral" />
       </h1>
+      <span className="flex justify-start items-start gap-3">
+        <Link href="https://github.com/heronoa">
+          <GitHubIcon />
+        </Link>
+        <Link href="https://www.linkedin.com/in/heron-amaral-49a9a1179/">
+          <LinkedInIcon />
+        </Link>
+        <Link href="mailto:heron.amaral@gmail.com">
+          <EmailIcon />
+        </Link>
+      </span>
       <p className="relative z-20 lg:text-xl font-bold bg-clip-text text-transparent animate-shimmer bg-[linear-gradient(110deg,#121212,45%,#EAF2F8,55%,#121212)] bg-[length:200%_100%]">
         I'm a full stack developer dedicated to create mordern and durable web
         service and web app.

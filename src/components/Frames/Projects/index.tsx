@@ -99,7 +99,7 @@ const Projects: React.FC = () => {
       </Box>
       <GradientDivider
         height="200px"
-        className="to-primary-light dark:to-dark-accentPurple via-dark-light dark:via-dark from-dark-light dark:from-dark bg-gradient-to-t -bottom-[1px] absolute z-30"
+        className="to-primary-light dark:to-dark-accentPurple via-black  from-black bg-gradient-to-t -bottom-[1px] absolute z-30"
       />
     </Box>
   );
