@@ -168,24 +168,6 @@ const DraggableGrid: React.FC<Props> = ({
         const targetIndex = positionsRef.current.findIndex(pos => {
           const index = Number(pos.id.split("_")[1]);
 
-          console.log({
-            pos,
-            targetX,
-            targetY,
-            range: {
-              x: [pos.x - gapArrX[index % 3], pos.x + gapArrX[index % 3]],
-              y: [
-                pos.y - gapArrY[Math.floor(index / 3)],
-                pos.y + gapArrY[Math.floor(index / 3)],
-              ],
-            },
-            check:
-              pos.x - gapArrX[index % 3] < targetX &&
-              pos.x + gapArrX[index % 3] > targetX &&
-              pos.y - gapArrY[Math.floor(index / 3)] < targetY &&
-              pos.y + gapArrY[Math.floor(index / 3)] > targetY,
-          });
-
           return (
             pos.x - gapArrX[index % 3] <= targetX &&
             pos.x + gapArrX[index % 3] >= targetX &&
@@ -243,10 +225,10 @@ const DraggableGrid: React.FC<Props> = ({
       ref={gridRef}
       className="grid grid-cols-3 w-full h-full relative "
       style={{
-        // width: gridWidth * 3 + gap * 3,
-        // height: gridHeight * 2 + gap * 2,
-        width: "100vw",
-        height: "300vh",
+        width: gridWidth * 3 + gap * 3,
+        height: gridHeight * 2 + gap * 2,
+        maxWidth: "100vw",
+        minHeight: "100vh",
       }}
     >
       {items.map((index, i) => (
