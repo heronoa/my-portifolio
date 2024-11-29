@@ -48,10 +48,11 @@ const AboutContent: React.FC = () => {
               tools and frameworks.
             </p>
             <p className="mt-4">
-              I'm always eager to take on new challenges and collaborate with
-              others to build amazing projects. Let's create something great
-              together!
+              My journey in the tech world started with Python and Arduino in a
+              physics lab, and I've since expanded my skills to include
+              frameworks and tools like React, Next.js, Node.js, and many more.
             </p>
+
             <p>
               I love to learn how things work beneath the hood and how to
               implement new things. Because of that curious nature, I have
