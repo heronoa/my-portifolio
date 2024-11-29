@@ -15,7 +15,7 @@ const ContactLink: React.FC<{
   text: string;
   icon: React.ReactNode;
   linkText?: string;
-}> = ({ href, target, rel, text, icon, linkText }) => (
+}> = ({ href, text, icon, linkText }) => (
   <Link
     href={href}
     target="_blank"
@@ -29,7 +29,7 @@ const ContactLink: React.FC<{
           {text}
         </p>
         <p className="text-primary-light group-hover:text-primary">{icon}</p>
-        {linkText && <a className="group-hover:underline">{linkText}</a>}
+        {linkText && <span className="group-hover:underline">{linkText}</span>}
       </div>
     </Button>
   </Link>

@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { EmblaOptionsType } from "embla-carousel";
@@ -32,23 +32,89 @@ const InteractableCarousel: React.FC<PropType> = props => {
   const [emblaRef, emblaApi] = useEmblaCarousel(options, [
     Autoplay({ playOnInit: false, delay: 3000 }),
   ]);
-
   const {
     prevBtnDisabled,
     nextBtnDisabled,
     onPrevButtonClick,
     onNextButtonClick,
   } = usePrevNextButtons(emblaApi);
-
   const { onAutoplayButtonClick } = useAutoplay(emblaApi);
+
+  const [positions, setPositions] = useState<React.CSSProperties[][]>([]);
+
+  useEffect(() => {
+    // Generate random positions for each item in the array
+
+    function handleRandomness() {
+      const random = Math.ceil(Math.random() * 3);
+
+      const bigBall = [
+        {
+          inset: "-24px auto auto -24px",
+        },
+        {
+          inset: "-24px -24px auto auto",
+        },
+        {
+          inset: "auto -24px auto -24px",
+        },
+        {
+          inset: "auto auto -24px -24px",
+        },
+      ][random];
+
+      const smallBall1 = [
+        {
+          inset: "-4px auto auto -4px",
+        },
+        {
+          inset: "-4px -4px auto auto",
+        },
+        {
+          inset: "auto -4px auto -4px",
+        },
+        {
+          inset: "auto auto -4px -4px",
+        },
+      ][random];
+
+      const smallBall2 = [
+        {
+          inset: "-4px auto auto 0",
+        },
+        {
+          inset: "-4px 0 auto auto",
+        },
+        {
+          inset: "auto -4px auto -0",
+        },
+        {
+          inset: "auto auto -4px 0",
+        },
+      ][random];
+
+      const randomPositions = slides.map(() => [
+        bigBall,
+        smallBall1,
+        smallBall2,
+      ]);
+
+      setPositions(randomPositions);
+    }
+
+    handleRandomness();
+  }, [slides]);
+
+  if (!Array.isArray(positions) || positions.length < 1) {
+    // Render nothing until positions are generated on the client side
+    return null;
+  }
 
   return (
     <div className={`embla ${props.className}`}>
       <div className="embla__viewport" ref={emblaRef}>
         <div className="embla__container">
           {slides.map(index => {
-            const random = Math.ceil(Math.random() * 3);
-
             return (
               <div
                 className="embla__slide relative !basis-[80%] cursor-pointer sm:!basis-1/2 md:!basis-3/4 lg:!basis-1/3"
@@ -80,58 +146,25 @@ const InteractableCarousel: React.FC<PropType> = props => {
                             <div
                               className={`bg-accent-green dark:bg-dark-accentGreen rounded-full absolute top-4  h-16 w-16 blur-md `}
                               style={
-                                [
-                                  {
-                                    inset: "-24px auto auto -24px",
-                                  },
-                                  {
-                                    inset: "-24px -24px auto auto",
-                                  },
-                                  {
-                                    inset: "auto -24px auto -24px",
-                                  },
-                                  {
-                                    inset: "auto auto -24px -24px",
-                                  },
-                                ][random]
+                                positions[slides.indexOf(index)][0] || {
+                                  visibility: "hidden",
+                                }
                               }
                             />
                             <div
                               className={`bg-accent-gold dark:bg-dark-accentGold rounded-full absolute h-12 w-12 blur-md `}
                               style={
-                                [
-                                  {
-                                    inset: "-4px auto auto -4px",
-                                  },
-                                  {
-                                    inset: "-4px -4px auto auto",
-                                  },
-                                  {
-                                    inset: "auto -4px auto -4px",
-                                  },
-                                  {
-                                    inset: "auto auto -4px -4px",
-                                  },
-                                ][random]
+                                positions[slides.indexOf(index)][0] || {
+                                  visibility: "hidden",
+                                }
                               }
                             />
                             <div
                               className={`bg-dark-accentGold dark:bg-accent-gold rounded-full absolute h-12 w-12 blur-md `}
                               style={
-                                [
-                                  {
-                                    inset: "-4px auto auto 0",
-                                  },
-                                  {
-                                    inset: "-4px 0 auto auto",
-                                  },
-                                  {
-                                    inset: "auto -4px auto -0",
-                                  },
-                                  {
-                                    inset: "auto auto -4px 0",
-                                  },
-                                ][random]
+                                positions[slides.indexOf(index)][0] || {
+                                  visibility: "hidden",
+                                }
                               }
                             />
                           </div>

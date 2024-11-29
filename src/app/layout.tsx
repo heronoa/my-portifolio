@@ -21,7 +21,10 @@ export default function RootLayout({
   return (
     <Providers>
       <html lang="en" className="!scroll-smooth">
-        <body className={inter.className + " !scroll-smooth"}>
+        <body
+          className={inter.className + " !scroll-smooth"}
+          suppressHydrationWarning
+        >
           <MainTemplate>{children}</MainTemplate>
         </body>
       </html>

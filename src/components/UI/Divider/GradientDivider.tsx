@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { CSSProperties, useEffect, useState } from "react";
 import { Box } from "@mui/material";
 
 interface Props {
@@ -15,30 +15,51 @@ const GradientDivider: React.FC<Props> = ({
   height = "50px",
   className,
 }: Props) => {
+  const [randomValues, setRandomValues] = useState<CSSProperties[]>();
+
+  useEffect(() => {
+    const randomizeValues = () => {
+      return Array.from({ length: 100 }).map(() => ({
+        animationDelay: `${Math.random() * 2}s`,
+        animationDuration: `${2 + Math.random() * 3}s`,
+        left: `${Math.random() * 100}%`,
+        bottom: `${Math.random() * 100}%`,
+      }));
+    };
+
+    const newRandomValues = randomizeValues();
+    setRandomValues(newRandomValues);
+
+    console.log({ newRandomValues });
+  }, []);
+
   return (
     <Box
-      className={`w-full ${className}`}
+      className={className}
       sx={{
+        minHeight: 100,
         height,
-        background: `linear-gradient(to bottom, ${startColor}, ${endColor})`,
+        background: `linear-gradient(to right, ${startColor}, ${endColor})`,
+        position: "relative",
+        overflow: "hidden",
       }}
     >
-      <div className="relative w-full h-full overflow-hidden">
-        <div className="absolute inset-0 flex justify-around flex-nowrap">
-          {Array.from({ length: 100 }).map((_, index) => (
+      {Array.isArray(randomValues) &&
+        randomValues.map(
+          ({ animationDelay, animationDuration, left, bottom }, index) => (
             <div
               key={index}
               className="w-1 h-1 bg-accent-gold dark:bg-dark-accentGold rounded-full animate-float"
               style={{
-                animationDelay: `${Math.random() * 2}s`,
-                animationDuration: `${2 + Math.random() * 3}s`,
-                left: `${Math.random() * 100}%`,
-                bottom: `${Math.random() * 100}%`,
+                animationDelay,
+                animationDuration,
+                left,
+                bottom,
+                position: "absolute",
               }}
             />
-          ))}
-        </div>
-      </div>
+          ),
+        )}
     </Box>
   );
 };
