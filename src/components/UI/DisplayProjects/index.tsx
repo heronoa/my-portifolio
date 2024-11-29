@@ -79,7 +79,7 @@ const DisplayProjects: React.FC = () => {
       description:
         "The server-side of a turn based game, featuring matchmaking and socket connection, also build login and sign systems",
       tech: ["nodejs", "mongodb", "express", "typescript", "prisma"],
-      url: "https://github.com/heronoa/colyseus-turngame",
+      url: "https://github.com/heronoa/turnbased-pvp-colyseus",
     },
     {
       img: "/images/rabbitmq.png",
