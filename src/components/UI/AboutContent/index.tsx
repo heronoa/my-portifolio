@@ -48,44 +48,39 @@ const AboutContent: React.FC = () => {
               tools and frameworks.
             </p>
             <p className="mt-4">
-              My journey in the tech world started with HTML, CSS, and
-              JavaScript, and I've since expanded my skills to include
-              frameworks and tools like React, Next.js, Node.js, and many more.
-            </p>
-            <p className="mt-4">
               I'm always eager to take on new challenges and collaborate with
               others to build amazing projects. Let's create something great
               together!
             </p>
             <p>
-              I love to learn how the things works beneath the hood and how to
-              implement new things. Because of that curious nature I have
-              learned a lot of things in a short period of time. I'm always
-              eager to take on new challenges and collaborate with others to
-              build amazing projects. Let's create something great together!
+              I love to learn how things work beneath the hood and how to
+              implement new things. Because of that curious nature, I have
+              learned a lot of things in a short period. I'm always eager to
+              take on new challenges and collaborate with others to build
+              amazing projects. Let's create something great together!
             </p>
           </>
         </BoxWithAnimatedBorder>
         <div className="flex flex-1 flex-col gap-4">
           <BoxWithAnimatedBorder bgClassName="w-full h-full flex justify-center items-center">
             <p className="overflow-visible">
-              I study physics at the Federal University of Pará and there have
-              my first contact with programming solving problem on a
-              experimental physics labolatory. There I worked with Python and
-              Arduino to automate some experiments and data collection. I liked
-              so much that I decided to learn more about programming and web
-              development. During the pandemic I dive into the web development
-              with the objective to live solving problems with techonology
+              I study physics at the Federal University of Pará and there was my
+              first contact with programming solving problems in an experimental
+              physics laboratory. There I worked with Python and Arduino will
+              automate some experiments and data collection. I liked it so much
+              that I learned more about programming and web development. During
+              the pandemic, I dive into web development with the objective of
+              solving problems with technology
             </p>
           </BoxWithAnimatedBorder>
           <BoxWithAnimatedBorder bgClassName="w-full h-full flex justify-center items-center">
             <p className="overflow-visible">
-              Nowdays I'm a full stack developer dedicated to create mordern and
-              durable web service and web app. I have experienced all the steps
-              of a commercial software, from the concepts to the end of they
-              cycle. Also, I study Analisis and Development of System at Estácio
-              de Sá University to improve my skills and dive even dipper to the
-              dephs of programming knowledge
+              Nowadays I'm a full-stack developer dedicated to creating modern
+              and durable web services and web apps. I have experienced all the
+              steps of commercial software, from the concepts to the end of the
+              cycle. Also, I study Analisis and Development of Systems at
+              Estácio de Sá University to improve my skills and dive even deeper
+              into the depths of programming knowledge.
             </p>
           </BoxWithAnimatedBorder>
         </div>

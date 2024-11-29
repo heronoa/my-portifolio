@@ -12,7 +12,7 @@ import MovableBackgroundColor from "../Animations/MovableBackgroundColor";
 const GreetingsSection: React.FC = () => {
   return (
     <div className="p-14 flex flex-col gap-4 relative mt-12 lg:mt-0 lg:ml-12 max-w-[90vw] h-[70vh] lg:h-auto">
-      <div className="absolute inset-0 -z-10 bg-black/50 rounded-lg shadow-[0_4px_30px_rgba(0,0,0,0.1)] backdrop-blur-sm border border-black/30" />
+      <div className="absolute inset-0 -z-10 bg-black/70 rounded-lg shadow-[0_4px_30px_rgba(0,0,0,0.1)] backdrop-blur-sm border border-black/30" />
       <RandomTextAnimation text="Hello World!" />
       <p className="relative z-20 text-primary-light text-md">My name is</p>
 
@@ -30,7 +30,7 @@ const GreetingsSection: React.FC = () => {
           <EmailIcon />
         </Link>
       </span>
-      <p className="relative z-20 lg:text-xl font-bold bg-clip-text text-transparent animate-shimmer bg-[linear-gradient(110deg,#121212,45%,#EAF2F8,55%,#121212)] bg-[length:200%_100%]">
+      <p className="relative z-20 lg:text-xl font-black bg-clip-text text-transparent animate-shimmer bg-[linear-gradient(110deg,#a9b4bd,45%,#EAF2F8,55%,#a9b4bd)] bg-[length:200%_100%]">
         I'm a full stack developer dedicated to create mordern and durable web
         service and web app.
       </p>

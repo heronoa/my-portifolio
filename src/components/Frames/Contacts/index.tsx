@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import Link from "next/link";
 import { Container, Box, Button } from "@mui/material";
 
@@ -7,6 +7,33 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import EmailIcon from "@mui/icons-material/Email";
 import ThreeDLetters from "@/components/UI/ThreeDLetters";
+
+const ContactLink: React.FC<{
+  href: string;
+  target?: string;
+  rel?: string;
+  text: string;
+  icon: React.ReactNode;
+  linkText?: string;
+}> = ({ href, target, rel, text, icon, linkText }) => (
+  <Link
+    href={href}
+    target="_blank"
+    rel="noopener noreferrer"
+    passHref
+    className="flex-1 flex justify-center items-center hover:animate-pulse min-h-[200px] rounded-lg hover:bg-primary/10 group"
+  >
+    <Button className="font-bold min-h-[200px] flex justify-center items-center flex-1 border-b border-solid lg:border-0 border-gray-400">
+      <div className="flex flex-col items-center">
+        <p className="normal-case text-primary-light group-hover:underline">
+          {text}
+        </p>
+        <p className="text-primary-light group-hover:text-primary">{icon}</p>
+        {linkText && <a className="group-hover:underline">{linkText}</a>}
+      </div>
+    </Button>
+  </Link>
+);
 
 const Contacts: React.FC = () => {
   return (
@@ -19,61 +46,30 @@ const Contacts: React.FC = () => {
           Do you want a website like this?
         </h2>
         <div className="flex flex-col lg:flex-row">
-          <Button className="font-bold min-h-[160px] flex-1 border-b border-solid lg:border-0 border-gray-400">
-            <div className="flex flex-col items-center">
-              <p className="normal-case">Send me a email</p>
-              <EmailIcon fontSize="large" />
-              <a href="mailto:heronoadev@gmail.com" className="hover:underline">
-                heronoadev@gmail.com
-              </a>
-              <a
-                href="mailto:heron.amaral@gmail.com"
-                className="hover:underline"
-              >
-                heron.amaral@gmail.com
-              </a>
-              <a
-                href="mailto:heron-amaral@outlook.com"
-                className="hover:underline"
-              >
-                heron-amaral@outlook.com
-              </a>
-            </div>
-          </Button>
+          <ContactLink
+            href="mailto:heron.amaral@gmail.com"
+            text="Send me an email"
+            icon={<EmailIcon fontSize="large" />}
+            linkText="heron.amaral@gmail.com"
+          />
           <div className="flex-col hidden lg:flex items-center justify-center ">
             <div className="h-1/2 w-px bg-gray-400"></div>
           </div>
-          <Button className="font-bold min-h-[160px] flex-1 border-b border-solid lg:border-0 border-gray-400">
-            <Link
-              href="https://github.com/heronoa"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full h-full"
-            >
-              <div className="flex flex-col items-center">
-                <p className="normal-case">Take a look on my project</p>
-                <GitHubIcon fontSize="large" />
-                github.com/heronoa
-              </div>
-            </Link>
-          </Button>
+          <ContactLink
+            href="https://github.com/heronoa"
+            text="Take a look into my project"
+            icon={<GitHubIcon fontSize="large" />}
+            linkText="github.com/heronoa"
+          />
           <div className="flex-col hidden lg:flex items-center justify-center">
             <div className="h-1/2 w-px bg-gray-400"></div>
           </div>
-          <Button className="font-bold min-h-[160px] flex-1">
-            <Link
-              href="https://www.linkedin.com/in/heron-amaral-49a9a1179/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className=" w-full h-full"
-            >
-              <div className="flex flex-col items-center">
-                <p className="normal-case">Connect with me</p>
-                <LinkedInIcon fontSize="large" />
-                Heron Amaral
-              </div>
-            </Link>
-          </Button>
+          <ContactLink
+            href="https://www.linkedin.com/in/heron-amaral-49a9a1179/"
+            text="Connect with me"
+            icon={<LinkedInIcon fontSize="large" />}
+            linkText="Heron Amaral"
+          />
         </div>
       </Container>
       <div className="absolute inset-0 -z-10">

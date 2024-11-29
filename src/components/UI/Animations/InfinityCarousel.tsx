@@ -41,7 +41,7 @@ const InfinityCarousel: React.FC<Props> = ({ images, reverse }: Props) => {
                   alt={item.alt}
                   width={80}
                   height={80}
-                  className="lg:w-32 md:w-20 w-16 items-center grayscale hover:grayscale-0 transition-all duration-300"
+                  className="lg:w-32 md:w-20 w-16 items-center  lg:grayscale hover:grayscale-0 transition-all duration-300"
                 />
               </Tooltip>
             </li>

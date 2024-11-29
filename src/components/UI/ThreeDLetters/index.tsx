@@ -95,7 +95,7 @@ const ThreeDLetters: React.FC = () => {
     };
   }, []);
 
-  return <div ref={mountRef} style={{ width: "100vw", height: "100vh" }} />;
+  return <div ref={mountRef} className="w-screen h-[70vh]" />;
 };
 
 export default ThreeDLetters;
