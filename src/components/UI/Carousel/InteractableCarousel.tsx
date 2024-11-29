@@ -51,7 +51,7 @@ const InteractableCarousel: React.FC<PropType> = props => {
 
             return (
               <div
-                className="embla__slide relative !basis-full cursor-pointer sm:!basis-1/2 md:!basis-3/4 lg:!basis-1/3"
+                className="embla__slide relative !basis-[80%] cursor-pointer sm:!basis-1/2 md:!basis-3/4 lg:!basis-1/3"
                 key={index.title}
               >
                 <Link
@@ -176,7 +176,7 @@ const InteractableCarousel: React.FC<PropType> = props => {
         </div>
       </div>
 
-      <div className="embla__controls">
+      <div className="embla__controls mt-0 lg:mt-5">
         <div className="embla__buttons">
           <PrevButton
             onClick={() => onAutoplayButtonClick(onPrevButtonClick)}
