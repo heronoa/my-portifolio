@@ -118,7 +118,7 @@ const DisplayProjects: React.FC = () => {
         <div className="mt-4 flex justify-center items-start min-h-[1000px] sm:min-h-[900px]">
           {view === "carousel" ? (
             <InteractableCarousel
-              className="max-w-screen sm:max-w-[500px] lg:max-w-[100vw] "
+              className="max-w-screen sm:max-w-[500px] lg:max-w-[100vw] !absolute"
               slides={projects}
               options={{ loop: true }}
             />
