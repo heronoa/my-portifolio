@@ -54,7 +54,7 @@ const WritingAnimation: React.FC<WritingAnimationProps> = ({ text }) => {
   }, [currentIndex, text]);
 
   return (
-    <div className="flex gap-1 justify-center items-center lg:justify-start lg:items-start">
+    <div className="flex gap-1 justify-center items-center lg:justify-start lg:items-start !text-primary-light">
       {displayedText.split("").map((char, index) => (
         <span key={index}>{char}</span>
       ))}

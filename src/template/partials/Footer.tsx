@@ -6,7 +6,7 @@ import EmailIcon from "@mui/icons-material/Email";
 
 const Footer: React.FC = () => (
   <footer className="flex justify-center items-center">
-    <p className="flex justify-center items-center gap-4">
+    <p className="flex justify-center !text-primary-light hover:text-primary items-center gap-4">
       &copy; {new Date().getFullYear()} Heron Amaral. All rights reserved.{" "}
       <Link href="https://github.com/heronoa">
         <GitHubIcon />
