@@ -19,15 +19,15 @@ const GreetingsSection: React.FC = () => {
       <h1 className="relative z-20 !text-primary-light text-4xl">
         <MovableBackgroundColor text="Heron Amaral" />
       </h1>
-      <span className="flex justify-center items-center !text-primary-light hover:!text-primary lg:justify-start lg:items-start gap-3">
+      <span className="flex justify-center items-center !text-primary-light  lg:justify-start lg:items-start gap-3">
         <Link href="https://github.com/heronoa">
-          <GitHubIcon />
+          <GitHubIcon className="hover:!text-primary" />
         </Link>
         <Link href="https://www.linkedin.com/in/heron-amaral-49a9a1179/">
-          <LinkedInIcon />
+          <LinkedInIcon className="hover:!text-primary" />
         </Link>
         <Link href="mailto:heron.amaral@gmail.com">
-          <EmailIcon />
+          <EmailIcon className="hover:!text-primary" />
         </Link>
       </span>
       <p className="relative z-20 lg:text-xl font-black bg-clip-text text-transparent animate-shimmer bg-[linear-gradient(110deg,#a9b4bd,45%,#EAF2F8,55%,#a9b4bd)] bg-[length:200%_100%]">
