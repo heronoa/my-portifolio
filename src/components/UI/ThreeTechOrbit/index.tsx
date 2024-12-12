@@ -29,37 +29,21 @@ const ThreeTechOrbit: React.FC = () => {
     const centralTexture = textureLoader.load("/images/me.webp");
     const centralTextureBack = textureLoader.load("/images/realme.jpeg");
     const orbitingTextures = [
-      textureLoader.load(
-        "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg",
-      ),
-      textureLoader.load(
-        "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg",
-      ),
-      textureLoader.load(
-        "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-plain.svg",
-      ),
+      textureLoader.load("/images/techs/nextjs-original.svg"),
+      textureLoader.load("/images/techs/nodejs-original.svg"),
+      textureLoader.load("/images/techs/typescript-plain.svg"),
     ];
     const secondOrbitingTextures = [
+      textureLoader.load("/images/techs/docker-original.svg"),
       textureLoader.load(
-        "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg",
+        "/images/techs/amazonwebservices-original-wordmark.svg",
       ),
-      textureLoader.load(
-        "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg",
-      ),
-      textureLoader.load(
-        "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vuejs/vuejs-original.svg",
-      ),
+      textureLoader.load("/images/techs/vuejs-original.svg"),
     ];
     const thirdOrbitingTextures = [
-      textureLoader.load(
-        "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nestjs/nestjs-original.svg",
-      ),
-      textureLoader.load(
-        "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg",
-      ),
-      textureLoader.load(
-        "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/firebase/firebase-original.svg",
-      ),
+      textureLoader.load("/images/techs/nestjs-original.svg"),
+      textureLoader.load("/images/techs/react-original.svg"),
+      textureLoader.load("/images/techs/firebase-original.svg"),
     ];
 
     const centralGeometry = new THREE.BoxGeometry(3, 4, 0.01);
